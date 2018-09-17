@@ -33,7 +33,18 @@ function renderButtons() {
     }
   }
 
+// This function handles events where a movie button is clicked
+$("#addFood").on("click", function(event) {
+    event.preventDefault();
+    // This line grabs the input from the textbox
+    var food = $("#submitInput").val().trim();
 
+    // Adding movie from the textbox to our array
+    starterFood.push(food);
+
+    // Calling renderButtons which handles the processing of our movie array
+    renderButtons();
+  });
 
 // //To build the retrieval and post of gif data based on button clicked
 // $('#searchInput').click(function(){
