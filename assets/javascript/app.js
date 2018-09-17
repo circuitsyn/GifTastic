@@ -33,10 +33,10 @@ function renderButtons() {
     }
   }
 
-// This function handles events where a movie button is clicked
+//This adds a food to the choice of foods on the screen as a button
 $("#addFood").on("click", function(event) {
     event.preventDefault();
-    // This line grabs the input from the textbox
+    // This grabs the value being submitted and stores it in the food variable
     var food = $("#submitInput").val().trim();
 
     // Adding movie from the textbox to our array
@@ -46,47 +46,49 @@ $("#addFood").on("click", function(event) {
     renderButtons();
   });
 
-// //To build the retrieval and post of gif data based on button clicked
-// $('#searchInput').click(function(){
+//To build the retrieval and post of gif data based on button clicked
+$('.foodButton').click(function(){
+    console.log(this);
+    var searchInput = $(this).attr("data-name");
+    console.log(searchInput);
+    var amount = $(this).attr("quantity");
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchInput +  "&limit=" + amount + "&api_key=y53RpclCSDGqsN0edEmYVNQGPPSX7v18";
 
-//     var searchInput = $('#searchInput').val(); 
-//     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchInput +  "&api_key=y53RpclCSDGqsN0edEmYVNQGPPSX7v18";
-
-//     $.ajax({
+    $.ajax({
     
     
-//     url: queryURL,
-//     type: "GET",
-//     success: function(response) {
-//         console.log(response) 
-//         console.log(response.rating)
-//         console.log(response.images.fixed_height)
+    url: queryURL,
+    type: "GET",
+    success: function(response) {
+        console.log(response) 
+        console.log(response.data[1].rating)
+        console.log(response.data[1].images.fixed_height)
 
-//         //create a div to hold topic
-//         var topicDiv = $("<div class='result'>");
+        //create a div to hold topic
+        var topicDiv = $("<div class='result'>");
 
-//         var rating = response.rating;
+        var rating = response.rating;
 
-//         var xtra1 = $("<p>").text('Rating: ' + rating);
+        var xtra1 = $("<p>").text('Rating: ' + rating);
 
-//         var title = response.title;
+        var title = response.title;
 
-//         var xtra2 = $("<p>").text('Title: ' + title);
+        var xtra2 = $("<p>").text('Title: ' + title);
 
-//         var imgURL = response.images.fixed_height;
-//         var imgURLFixed = response.images.fixed_height_still;
+        var imgURL = response.images.fixed_height;
+        var imgURLFixed = response.images.fixed_height_still;
 
-//         var image = $("<img>").attr("src", imgURL);
+        var image = $("<img>").attr("src", imgURL);
 
-//         topicDiv.append(image);
-
-
-//     }
-//     });
+        topicDiv.append(image);
 
 
+    }
+    });
 
 
 
 
-// });
+
+
+});
