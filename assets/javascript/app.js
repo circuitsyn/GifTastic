@@ -1,4 +1,10 @@
 var starterFood = ["banana", "chinese food", "salsa", "guacamole", "pizza", "cookies"];
+//Possible download button - Need to feed the url from the api
+//<a class="btn btn-primary btn-lg" href="http://anothersitehere.com/file.pdf">
+//   Download PDF
+//</a>
+
+
 
 // function displayGifs() {
 
@@ -12,11 +18,10 @@ renderButtons();
 
 function renderButtons() {
 
-    // Deleting the movies prior to adding new movies
-    // (this is necessary otherwise you will have repeat buttons)
+    // Clearing button area to prevent duplicates
     $("#buttonSection").empty();
 
-    // Looping through the array of movies
+    // Looping through the array of starter foods
     for (var i = 0; i < starterFood.length; i++) {
 
       // Then dynamicaly generating buttons for each movie in the array
@@ -92,3 +97,4 @@ $('.foodButton').click(function(){
 
 
 });
+========c c
