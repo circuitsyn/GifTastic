@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-var starterFood = ["banana", "chinese food", "salsa", "guacamole", "pizza", "cookies"];
+var starterFood = ["banana", "salad", "salsa", "guacamole", "pizza", "cookies"];
 //Possible download button - Need to feed the url from the api
 //<a class="btn btn-primary btn-lg" href="http://anothersitehere.com/file.pdf">
 //   Download PDF
@@ -61,7 +61,7 @@ $("#addFood").on("click", function(event) {
   });
 
 //To build the retrieval and post of gif data based on button clicked
-$(document).click('.foodButton', function(){
+$(document).on('click', '.foodButton', function(){
     console.log(this);
     var searchInput = $(this).attr("data-name");
     console.log(searchInput);
