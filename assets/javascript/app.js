@@ -82,7 +82,7 @@ $(document).click('.foodButton', function(){
         for (let i=0; i < response.data.length; i++ ){
           console.log(response.data.length);
           //create a div to hold topic
-          var topicDiv = $("<div class='result container col-4'>");
+          var topicDiv = $("<div class='result container col-6'>");
           console.log('i value: ' + i);
           console.log('Arron Requsted: ', response.data); 
           

@@ -1,6 +1,6 @@
 @font-face {
     font-family: foodFont;
-    src: url('../fonts/AlphaGarden.WOFF');
+    src: url('../fonts/hotpizza_1.woff');
 }
 
 body {
@@ -25,9 +25,9 @@ label, #gifSelector {
 h1 {
     font-size: 70px;
     font-family: foodFont;
-    background-color: white;
-    border: solid #f0ad4e 2px;
-    border-radius: 25px;
+    /* background-color: white; */
+    /* border: solid #f0ad4e 2px; */
+    /* border-radius: 25px; */
     padding: 10px;
     margin: 3%;
     /* font-weight: bold; */
@@ -38,7 +38,7 @@ p {
 }
 
 .greetingArea {
-    background-color: rgba(192,192,192,0.8);
+    background-color: rgba( 192,233,232,0.8);
     border: solid #f0ad4e 2px;
     border-radius: 25px;
     padding: 25px;
@@ -46,6 +46,11 @@ p {
     text-align: center;
 }
 
-.mainIMG {
+img, .mainIMG {
     border-radius: 25px;
+}
+
+img {
+    border-radius: 25px;
+    padding: 15px;
 }
