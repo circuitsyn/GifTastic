@@ -99,7 +99,7 @@ $(document).on('click', '.foodButton', function(){
           console.log(imgURLFixed);
           var image = $("<img>").attr("src", imgURLFixed);
 
-          var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" role="button"> Download Gif</a>';
+          var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif" role="button" target="_blank"> Download Gif</a>';
           $(download).attr("href", imgURLFixed);
           console.log('img html: ' + download);
           topicDiv.append(image);
@@ -112,6 +112,7 @@ $(document).on('click', '.foodButton', function(){
     });
     });
 
+    
 
 
 
