@@ -1,3 +1,8 @@
+@font-face {
+    font-family: foodFont;
+    src: url('../fonts/AlphaGarden.WOFF');
+}
+
 body {
     background-image: url("../images/bananas.png");
 }
@@ -5,5 +10,42 @@ body {
 .foodButton {
     border-radius: 15px;
     border: solid black 2px;
+    font-weight: bold;
 
+}
+
+label, #gifSelector {
+    color: #f0ad4e  !important;
+    border: solid #f0ad4e 1px;
+    border-radius: 5px;
+    padding: 7px;
+    margin-right: 5px;
+}
+
+h1 {
+    font-size: 70px;
+    font-family: foodFont;
+    background-color: white;
+    border: solid #f0ad4e 2px;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 3%;
+    /* font-weight: bold; */
+}
+
+p {
+    font-weight: bold;
+}
+
+.greetingArea {
+    background-color: rgba(192,192,192,0.8);
+    border: solid #f0ad4e 2px;
+    border-radius: 25px;
+    padding: 25px;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.mainIMG {
+    border-radius: 25px;
 }
