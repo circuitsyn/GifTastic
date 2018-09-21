@@ -1,16 +1,6 @@
 $(document).ready(function() {
 
 var starterFood = ["banana", "salad", "salsa", "avocado", "pizza", "cookies"];
-//Possible download button - Need to feed the url from the api
-//<a class="btn btn-primary btn-lg" href="http://anothersitehere.com/file.pdf">
-//   Download PDF
-//</a>
-
-
-
-// function displayGifs() {
-
-// }
 
 //render buttons 
 siteGlobals = {
@@ -38,7 +28,7 @@ function renderButtons() {
       //Adding a qty attribute
       cell.attr("qty-amt", $('#exampleSelect1').val().trim());
       siteGlobals.count = $('#exampleSelect1').val().trim();
-      console.log('qty: ' + $('#exampleSelect1').val().trim());
+      
       
       // Providing the initial button text
       cell.text(starterFood[i]);
@@ -52,7 +42,7 @@ $("#addFood").on("click", function(event) {
     event.preventDefault();
     // This grabs the value being submitted and stores it in the food variable
     var food = $("#submitInput").val().trim();
-    console.log('food button: ' + food);
+    
     // Adding movie from the textbox to our array
     starterFood.push(food);
 
@@ -62,11 +52,11 @@ $("#addFood").on("click", function(event) {
 
 //To build the retrieval and post of gif data based on button clicked
 $(document).on('click', '.foodButton', function(){
-    console.log(this);
+    
     var searchInput = $(this).attr("data-name");
-    console.log(searchInput);
+    
     var amount = $(this).attr("qty-amt");
-    console.log(amount);
+    
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchInput +  "&limit=" + amount + "&api_key=y53RpclCSDGqsN0edEmYVNQGPPSX7v18";
     
     
@@ -76,34 +66,33 @@ $(document).on('click', '.foodButton', function(){
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-        console.log(response) 
+        
         // console.log(response.data[i].rating)
         // console.log(response.data[1].images.fixed_height)
         for (let i=0; i < response.data.length; i++ ){
-          console.log(response.data.length);
+          
           //create a div to hold topic
           var topicDiv = $("<div class='container col-6'>");
-          console.log('i value: ' + i);
-          console.log('Arron Requsted: ', response.data); 
+          
           
           var rating = response.data[i].rating;
-          console.log('rating: ' + rating);
+          
           var ratingStat = $("<p>").text('Rating: ' + rating);
 
           var title = response.data[i].title;
-          console.log('title: ' + title);
+          
           var titleStat = $("<p>").text('Title: ' + title);
 
           // var imgURL = response.images.fixed_height;
           var imgURLFixed = response.data[i].images.fixed_height_still.url;
-          console.log(imgURLFixed);
+          
           var image = $('<img class="result">').attr("src", imgURLFixed);
           $(image).attr("data-state", "still"); //establish still state for object
           $(image).attr("data-still", response.data[i].images.fixed_height_still.url);
           $(image).attr("data-animate", response.data[i].images.fixed_height.url);
           var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif.gif" role="button" target="_blank"> Download Gif</a>';
           $(download).attr("href", imgURLFixed);
-          console.log('img html: ' + download);
+          
           topicDiv.append(image);
           topicDiv.append(ratingStat);
           topicDiv.append(titleStat);
