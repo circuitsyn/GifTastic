@@ -39,7 +39,7 @@ p {
 
 .greetingArea {
     background-color: rgba( 192,233,232,0.8);
-    border: solid #f0ad4e 2px;
+    border: solid #f0ad4e 3px;
     border-radius: 25px;
     padding: 25px;
     margin-top: 3%;
