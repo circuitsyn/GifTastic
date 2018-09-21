@@ -118,11 +118,5 @@ $(document).on('click', '.foodButton', function(){
       }
     });
 
-    $(".dnld").click(function(){
-      var href = $('.dnld').attr('href');
-      window.location.href = href;
-    });
-
-
-
+   
 });
