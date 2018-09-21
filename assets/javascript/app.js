@@ -67,7 +67,7 @@ $(document).on('click', '.foodButton', function(){
     console.log(searchInput);
     var amount = $(this).attr("qty-amt");
     console.log(amount);
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchInput +  "&limit=" + amount + "&api_key=y53RpclCSDGqsN0edEmYVNQGPPSX7v18";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchInput +  "&limit=" + amount + "&api_key=y53RpclCSDGqsN0edEmYVNQGPPSX7v18";
     
     
     
@@ -99,7 +99,7 @@ $(document).on('click', '.foodButton', function(){
           console.log(imgURLFixed);
           var image = $("<img>").attr("src", imgURLFixed);
 
-          var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif" role="button" target="_blank"> Download Gif</a>';
+          var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif.gif" role="button" target="_blank"> Download Gif</a>';
           $(download).attr("href", imgURLFixed);
           console.log('img html: ' + download);
           topicDiv.append(image);
