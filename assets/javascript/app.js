@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-var starterFood = ["banana", "salad", "salsa", "guacamole", "pizza", "cookies"];
+var starterFood = ["banana", "salad", "salsa", "avocado", "pizza", "cookies"];
 //Possible download button - Need to feed the url from the api
 //<a class="btn btn-primary btn-lg" href="http://anothersitehere.com/file.pdf">
 //   Download PDF
@@ -82,7 +82,7 @@ $(document).on('click', '.foodButton', function(){
         for (let i=0; i < response.data.length; i++ ){
           console.log(response.data.length);
           //create a div to hold topic
-          var topicDiv = $("<div class='result container col-6'>");
+          var topicDiv = $("<div class='container col-6'>");
           console.log('i value: ' + i);
           console.log('Arron Requsted: ', response.data); 
           
@@ -97,7 +97,7 @@ $(document).on('click', '.foodButton', function(){
           // var imgURL = response.images.fixed_height;
           var imgURLFixed = response.data[i].images.fixed_height.url;
           console.log(imgURLFixed);
-          var image = $("<img>").attr("src", imgURLFixed);
+          var image = $('<img class="result">').attr("src", imgURLFixed);
 
           var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif.gif" role="button" target="_blank"> Download Gif</a>';
           $(download).attr("href", imgURLFixed);

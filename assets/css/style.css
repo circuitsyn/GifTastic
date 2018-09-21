@@ -47,11 +47,11 @@ p {
     text-align: center;
 }
 
-img, .mainIMG {
+.mainIMG {
     border-radius: 25px;
 }
 
-img {
+.result {
     border-radius: 25px;
-    padding: 15px;
+    padding: 5px;
 }
