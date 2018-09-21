@@ -90,7 +90,7 @@ $(document).on('click', '.foodButton', function(){
           $(image).attr("data-state", "still"); //establish still state for object
           $(image).attr("data-still", response.data[i].images.fixed_height_still.url);
           $(image).attr("data-animate", response.data[i].images.fixed_height.url);
-          var download = '<a class="btn btn-dark btn-lg" href="' + imgURLFixed  + '" download="yourGif.gif" role="button" target="_blank"> Download Gif</a>';
+          var download = '<a class="btn btn-dark btn-lg dnld" href="' + imgURLFixed  + '" download="yourGif.gif" role="button" target="_blank"> Download Gif</a>';
           $(download).attr("href", imgURLFixed);
           
           topicDiv.append(image);
@@ -118,7 +118,10 @@ $(document).on('click', '.foodButton', function(){
       }
     });
 
-
+    $(".dnld").click(function(){
+      var href = $('.dnld').attr('href');
+      window.location.href = href;
+    });
 
 
 
